@@ -1,6 +1,7 @@
 import Counter from "./Components/Counter"
 import TodoList from "./Components/TodoList"
 import ToggleText from "./Components/ToggleText"
+import CharacterCounter from "./Components/CharacterCount"
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
         <Counter/>
         <TodoList/>
         <ToggleText/>
+        <CharacterCounter/>
       </div>
      
     </>
