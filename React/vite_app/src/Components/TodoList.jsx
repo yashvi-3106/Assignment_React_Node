@@ -1,3 +1,13 @@
+// Todo List
+// Problem: Build a simple todo list with the ability to add and delete items.
+
+// Concepts Tested:
+
+// List rendering (.map)
+// useState
+// Event handling
+
+
 import { useState } from 'react';
 
 function TodoList() {

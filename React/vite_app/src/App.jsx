@@ -1,5 +1,6 @@
 import Counter from "./Components/Counter"
 import TodoList from "./Components/TodoList"
+import ToggleText from "./Components/ToggleText"
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       <div>
         <Counter/>
         <TodoList/>
+        <ToggleText/>
       </div>
      
     </>
