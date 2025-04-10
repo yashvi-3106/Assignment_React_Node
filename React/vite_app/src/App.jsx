@@ -3,6 +3,7 @@ import TodoList from "./Components/TodoList"
 import ToggleText from "./Components/ToggleText"
 import CharacterCounter from "./Components/CharacterCount"
 import SearchFilter from "./Components/SearchFilter"
+import UserList from "./Components/UserList"
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <ToggleText/>
         <CharacterCounter/>
         <SearchFilter/>
+        <UserList/>
       </div>
      
     </>
