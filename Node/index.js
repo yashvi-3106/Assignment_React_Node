@@ -113,8 +113,7 @@ app.put('/users/:id', (req, res) => {
   });
 
 //   PATCH to Partially Update a User
-// Task:
-// Create a PATCH /users/:id endpoint to update only selected fields.
+// Task : Create a PATCH /users/:id endpoint to update only selected fields.
 
 // Concepts Tested:
 
@@ -141,6 +140,31 @@ app.put('/users/:id', (req, res) => {
   
     res.json(user);
   });
+
+//   DELETE a User
+// Task:
+// Create a DELETE /users/:id route to remove a user from the list.
+
+// Concepts Tested:
+
+// Array filtering
+// Status codes (204 No Content, 404 Not Found)
+
+
+  app.delete('/users/:id', (req, res) => {
+    const id = parseInt(req.params.id);
+    const initialLength = users.length;
+    
+    users = users.filter(user => user.id !== id);
+    
+    if (users.length < initialLength) {
+        
+        res.status(204).send();
+    } else {
+        
+        res.status(404).json({ message: 'User not found' });
+    }
+});
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
