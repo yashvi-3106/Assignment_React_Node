@@ -4,6 +4,7 @@ import ToggleText from "./Components/ToggleText"
 import CharacterCounter from "./Components/CharacterCount"
 import SearchFilter from "./Components/SearchFilter"
 import UserList from "./Components/UserList"
+import LoginForm from "./Components/LoginForm"
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <CharacterCounter/>
         <SearchFilter/>
         <UserList/>
+        <LoginForm/>
       </div>
      
     </>
