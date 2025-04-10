@@ -1,3 +1,11 @@
+// Counter Component
+// Problem: Create a counter component with increment, decrement, and reset buttons.
+
+// Concepts Tested:
+
+// useState
+// Basic event handling
+
 import { useState } from 'react';
 
 function Counter() {
