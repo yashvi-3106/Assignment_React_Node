@@ -12,6 +12,8 @@ const express = require('express');
 const app = express();
 const PORT = 3000;
 
+app.use(express.json()); 
+
 
 const users = [
     { id: 1, name: 'Kirti Kapoor', email: 'kirtimehta43@gmail.com' , age: 18},
@@ -28,6 +30,34 @@ app.get('/', (req, res) => {
 app.get('/users', (req, res) => {
     res.json(users);
 });
+
+// POST New User
+// Task:
+// Create a POST /users route to add a user to an in-memory array.
+
+// Concepts Tested:
+
+// POST method
+// req.body parsing
+// Middleware usage (e.g., express.json())
+
+app.post('/users', (req, res) => {
+    const { name, email, age } = req.body;
+  
+    if (!name || !email || !age) {
+      return res.status(400).json({ error: 'Name , email and age are required.' });
+    }
+  
+    const newUser = {
+      id: users.length + 1, 
+      name,
+      email,
+      age
+    };
+  
+    users.push(newUser);
+    res.status(201).json(newUser);
+  });
 
 
 app.listen(PORT, () => {
