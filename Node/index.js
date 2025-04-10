@@ -112,6 +112,36 @@ app.put('/users/:id', (req, res) => {
     res.status(200).json(users[userIndex]);
   });
 
+//   PATCH to Partially Update a User
+// Task:
+// Create a PATCH /users/:id endpoint to update only selected fields.
+
+// Concepts Tested:
+
+// Partial update logic
+// Merging existing data
+
+  app.patch('/users/:id', (req, res) => {
+    const userId = parseInt(req.params.id);
+    const { name, email } = req.body;
+  
+    const user = users.find(u => u.id === userId);
+  
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+  
+   
+    if (name !== undefined) {
+      user.name = name;
+    }
+    if (email !== undefined) {
+      user.email = email;
+    }
+  
+    res.json(user);
+  });
+
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
